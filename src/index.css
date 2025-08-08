@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  /* Base Colors */
+  --color-bg: oklch(92.191% 0.0001 271.152);
+  --color-bg-contrast: oklch(100% 0.00011 271.152);
+  --color-contrast: oklch(21.779% 0.00002 271.152);
+  --color-accent: oklch(88.531% 0.0001 271.152);
+  --color-muted: oklch(88.837% 0.0001 271.152);
+
+  /* Tool Colors */
+  --color-tool-bg: oklch(19.62% 0.04228 259.207);
+  --color-tool-muted: oklch(27.328% 0.07214 260.45);
+  --color-analytic-success: oklch(67.311% 0.16242 144.231);
+  --color-analytic-warning: oklch(78.553% 0.15889 70.801);
+  --color-analytic-error: oklch(64.263% 0.21531 28.791);
+}
+
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideToTop {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@theme {
+  /* Base Colors */
+  --color-bg: var(--color-bg);
+  --color-bg-contrast: var(--color-bg-contrast);
+  --color-contrast: var(--color-contrast);
+  --color-accent: var(--color-accent);
+  --color-muted: var(--color-muted);
+
+  /* Tool Colors */
+  --color-tool-bg: var(--color-tool-bg);
+  --color-tool-muted: var(--color-tool-muted);
+  --color-analytic-success: var(--color-analytic-success);
+  --color-analytic-warning: var(--color-analytic-warning);
+  --color-analytic-error: var(--color-analytic-error);
+
+  /* Tool Animations */
+  --animate-tool-in: slideFromTop 0.3s ease-in-out forwards;
+  --animate-tool-out: slideToTop 0.3s ease-in-out forwards;
+}
