@@ -5,7 +5,7 @@ type DetailItem = {
   value: number;
 }
 
-export const getSEO = (): SEO => {
+export const getSEO = async (): Promise<SEO> => {
   const details: DetailItem[] = []
 
   const check = (label: string, condition: boolean) => {
@@ -30,6 +30,15 @@ export const getSEO = (): SEO => {
     return !href || href === "" || href === "#"
   }).length
   check("valid-links", invalidLinks === 0)
+
+  const isRobotsFileExisting = async () => {
+    const response = await fetch('/robots.txt')
+    const contentType = response.headers.get('content-type') ?? ''
+    return contentType === 'text/plain'
+  }
+
+  const robotsFileExists = await isRobotsFileExisting()
+  check("robots.txt-exists", robotsFileExists)
 
   const h1s = document.querySelectorAll('h1').length
   check("has-h1", h1s > 0)
