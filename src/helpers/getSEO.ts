@@ -2,7 +2,7 @@ import type { MetricResult as SEO } from "@@types/metricResult"
 import type { BrowserEnvironment } from "@@types/rules"
 import { rules } from "./rules/seo"
 
-type DetailItem = { label: string; value: number }
+type DetailItem = { label: string, value: number }
 
 /**
  * Get SEO metrics for the current document.
