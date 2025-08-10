@@ -4,6 +4,11 @@ import { Image } from "@components/ui/Image"
 import { classMerger } from "@utils/classMerger"
 import arrowDown from "@assets/arrow-down.svg"
 
+/**
+ * ShowDetailsButton component displays a button to toggle the visibility of additional details.
+ * @param props - Props for the button component.
+ * @returns The rendered button component.
+ */
 export const ShowDetailsButton = ({ 
   active = false, 
   ...props 
@@ -16,7 +21,7 @@ export const ShowDetailsButton = ({
     >
       <Image
         src={arrowDown}
-        alt=""
+        role="img"
         className={classMerger(
           "tw:w-4 tw:h-4 tw:ml-2 tw:transition-transform tw:duration-150 tw:ease-in-out",
           active ? "tw:rotate-180" : "tw:rotate-0"
