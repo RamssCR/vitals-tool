@@ -10,10 +10,10 @@ import type { ComponentProps } from "react"
  * - Returns 'text-muted/85' for undefined or negative status values.
  */
 const detectStatus = (status: number) => {
-  if (status >= 90) return 'text-analytic-success'
-  if (status >= 75) return 'text-analytic-warning'
-  if (status >= 0) return 'text-analytic-error'
-  return 'text-muted/85'
+  if (status >= 90) return 'tw:text-analytic-success'
+  if (status >= 75) return 'tw:text-analytic-warning'
+  if (status >= 0) return 'tw:text-analytic-error'
+  return 'tw:text-muted/85'
 }
 
 type StatusProps = ComponentProps<typeof Text> & {

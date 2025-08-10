@@ -14,15 +14,15 @@ export const Items = ({ items }: ItemsProps) => {
   const itemId = useId()
 
   return (
-    <article role="grid" className="w-full max-w-[23em] bg-tool-bg/85 rounded-lg">
+    <article role="grid" className="tw:w-full tw:max-w-[23em] tw:bg-tool-bg/85 tw:rounded-lg">
       {items.map(item => (
         <div
           key={`${itemId}-${item.label}`}
-          className="flex items-center justify-between px-4 py-3"
+          className="tw:flex tw:items-center tw:justify-between tw:px-4 tw:py-3"
           aria-label={`Metric ${item.label}`}
         >
-          <Text size="xs" className="text-muted/85" weight="medium">{item.label}</Text>
-          <Text size="xs" weight="medium" className="text-bg">{item.value}</Text>
+          <Text size="xs" className="tw:text-muted/85" weight="medium">{item.label}</Text>
+          <Text size="xs" weight="medium" className="tw:text-bg">{item.value}</Text>
         </div>
       ))}
     </article>
