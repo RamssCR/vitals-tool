@@ -12,7 +12,7 @@ export const getBestPractices = (): BestPractices => {
   check("hardware-concurrency", 'hardwareConcurrency' in navigator)
   check("secure-context", window.isSecureContext)
   check("crypto", 'crypto' in window)
-  check("document.write", !document.write.toString().includes('[native code]'))
+  check("document.write", document.write.toString().includes('[native code]'))
 
   const passwordInputs = Array.from(document.querySelectorAll('input[type="password"]')) as HTMLInputElement[]
   const allSecureAutocomplete = passwordInputs.every(input =>
