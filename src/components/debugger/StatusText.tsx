@@ -34,6 +34,8 @@ export const StatusText = ({ status, className, size = "sm", ...props }: StatusP
       className={classMerger(detectStatus(status), className)}
       size={size}
       {...props}
-    />
+    >
+      {status}
+    </Text>
   )
 }
