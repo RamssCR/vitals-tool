@@ -1,9 +1,9 @@
-import { AuditProvider } from '@providers/AuditProvider';
+import { AuditProvider } from '@providers/AuditProvider'
 import { DebugButton } from "./DebugButton"
 import { Metrics } from "./Metrics"
-import { AuditContext } from '@contexts/AuditContext';
+import { AuditContext } from '@contexts/AuditContext'
 import { useToggle } from "@hooks/useToggle"
-import { use } from 'react';
+import { use } from 'react'
 
 /**
  * Debugger component for displaying the debugging interface.

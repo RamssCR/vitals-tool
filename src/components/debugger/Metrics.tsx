@@ -1,11 +1,11 @@
 import { Metric } from "./Metric"
 import { ShowDetailsButton } from "./ShowDetailsButton"
 import { classMerger } from "@utils/classMerger"
-import { useToggle } from '@hooks/useToggle';
-import { useMetricTogglers } from "@hooks/useMetricTogglers";
-import { useAudit } from "@hooks/useAudit";
-import { formatKey } from "@utils/formatKey";
-import { Title } from "@components/ui/Title";
+import { useToggle } from '@hooks/useToggle'
+import { useMetricTogglers } from "@hooks/useMetricTogglers"
+import { useAudit } from "@hooks/useAudit"
+import { formatKey } from "@utils/formatKey"
+import { Title } from "@components/ui/Title"
 
 export const Metrics = ({
   active = false,
