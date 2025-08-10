@@ -6,7 +6,7 @@ import { rules } from './rules/bestPractices'
  * Get best practices metrics for the current document.
  * @returns A BestPractices metric result.
  */
-export const getBestPractices = (environment: BrowserEnvironment = {
+export const getBestPractices = (environment: Required<BrowserEnvironment> = {
   location,
   navigator,
   window,
