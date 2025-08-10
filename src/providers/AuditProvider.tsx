@@ -33,14 +33,20 @@ export const AuditProvider = ({ children }: { children: ReactNode }) => {
       ])
 
       const seo = await getSEO()
-      const vitals = await getPerformance()
 
-      setVitals({
-        vitals,
+      setVitals((prev) => ({
+        ...prev,
         accessibility,
         bestPractices,
         seo,
         loading: false
+      }))
+
+      getPerformance((performance) => {
+        setVitals((prev) => ({
+          ...prev,
+          vitals: performance,
+        }))
       })
     }
 
