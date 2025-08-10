@@ -54,7 +54,7 @@ export const getPerformance = (onUpdate: (result: PerformanceResult) => void): v
       details.reduce(
         (acc, curr) => acc + normalizeScore(curr.label, curr.value),
         0
-      ) / (details.length || 1)
+      ) / (details.length)
 
     onUpdate({
       score: Math.round(score),
