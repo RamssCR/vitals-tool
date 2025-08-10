@@ -14,7 +14,7 @@ export const Items = ({ items }: ItemsProps) => {
   const itemId = useId()
 
   return (
-    <article role="grid" className="tw:w-full tw:max-w-[23em] tw:bg-tool-bg/85 tw:rounded-lg">
+    <article className="tw:w-full tw:max-w-[23em] tw:bg-tool-bg/85 tw:rounded-lg">
       {items.map(item => (
         <div
           key={`${itemId}-${item.label}`}
