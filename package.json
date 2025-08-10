@@ -12,11 +12,10 @@
       "import": "./dist/vitals-tool.js",
       "require": "./dist/vitals-tool.umd.cjs",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./dist/vitals-tool.css": "./dist/vitals-tool.css"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "dev": "vite",
     "build": "rimraf dist && tsc --project tsconfig.build.json && vite build",
