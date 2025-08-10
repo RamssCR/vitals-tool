@@ -2,7 +2,6 @@
   "name": "vitals-tool",
   "private": true,
   "description": "A tool for measuring and optimizing web vitals in React applications, including Lighthouse measurements like Accessibility, Best Practices and SEO.",
-  "main": "dist/vitals-tool.umd.cjs",
   "module": "dist/vitals-tool.js",
   "types": "dist/index.d.ts",
   "version": "1.0.0",
@@ -10,7 +9,6 @@
   "exports": {
     ".": {
       "import": "./dist/vitals-tool.js",
-      "require": "./dist/vitals-tool.umd.cjs",
       "types": "./dist/index.d.ts"
     },
     "./dist/vitals-tool.css": "./dist/vitals-tool.css"
@@ -22,7 +20,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",
-    "test:coverage": "vitest --coverage --reporter=html"
+    "test:coverage": "vitest --coverage --reporter=html --reporter=default"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
