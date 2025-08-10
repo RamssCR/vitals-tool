@@ -21,12 +21,12 @@ export const AuditProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const runAudits = async () => {
-      const [accessibility, seo, bestPractices] = await Promise.all([
+      const [accessibility, bestPractices] = await Promise.all([
         getAccessibility(),
-        Promise.resolve(getSEO()),
         Promise.resolve(getBestPractices())
       ])
 
+      const seo = await getSEO()
       const vitals = await getPerformance()
 
       setVitals({
