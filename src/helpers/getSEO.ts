@@ -5,9 +5,19 @@ type DetailItem = {
   value: number;
 }
 
+/**
+ * Get SEO metrics for the current document.
+ * @returns A Promise that resolves to an SEO metric result.
+ */
 export const getSEO = async (): Promise<SEO> => {
   const details: DetailItem[] = []
 
+  /**
+   * Check a specific SEO condition.
+   * @param label The label for the SEO metric.
+   * @param condition The condition to check.
+   * @returns void
+   */
   const check = (label: string, condition: boolean) => {
     details.push({ label, value: condition ? 1 : 0 })
   }
@@ -31,6 +41,10 @@ export const getSEO = async (): Promise<SEO> => {
   }).length
   check("valid-links", invalidLinks === 0)
 
+  /**
+   * Checks if the robots.txt file exists.
+   * @returns A promise that resolves to a boolean indicating the existence of the robots.txt file.
+   */
   const isRobotsFileExisting = async () => {
     const response = await fetch('/robots.txt')
     const contentType = response.headers.get('content-type') ?? ''

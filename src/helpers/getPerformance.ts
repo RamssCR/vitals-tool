@@ -11,6 +11,9 @@ import type { MetricResult as PerformanceResult } from '@@types/metricResult'
 /**
  * Normalizes the performance score based on the metric name and value.
  * The lower the value, the higher the score.
+ * @param name The name of the metric (e.g., 'INP', 'LCP', etc.).
+ * @param value The value of the metric.
+ * @returns The normalized score for the metric.
  */
 export const normalizeScore = (name: string, value: number): number => {
   switch (name) {
@@ -29,7 +32,6 @@ export const normalizeScore = (name: string, value: number): number => {
   }
 }
 
-// Mapeo de funciones de escucha
 const listeners = {
   LCP: onLCP,
   CLS: onCLS,
@@ -43,6 +45,7 @@ let performancePromise: Promise<PerformanceResult> | null = null
 /**
  * Obtains performance metrics and returns a promise that resolves with the performance result.
  * The result includes a score and detailed metrics.
+ * @returns A promise that resolves to a PerformanceResult.
  */
 export const getPerformance = (): Promise<PerformanceResult> => {
   if (!performancePromise) {
@@ -55,6 +58,7 @@ export const getPerformance = (): Promise<PerformanceResult> => {
        * Tries to resolve the performance promise with the collected metrics.
        * If the metrics are not yet collected, it calculates the score based on the normalized values.
        * If the metrics are already resolved, it does nothing.
+       * @returns void
        */
       const tryResolve = () => {
         if (resolved) return
@@ -78,6 +82,8 @@ export const getPerformance = (): Promise<PerformanceResult> => {
        * Handles the metric reporting.
        * It checks if the metric for the given name is already collected.
        * If not, it stores the metric value and increments the collected count.
+       * @param name The name of the metric.
+       * @returns A function that handles the metric reporting.
        */
       const handleMetric = (name: keyof typeof listeners) => (metric: Metric) => {
         if (!metrics[name]) {

@@ -1,8 +1,18 @@
 import type { MetricResult as BestPractices } from '@@types/metricResult'
 
+/**
+ * Get best practices metrics for the current document.
+ * @returns A BestPractices metric result.
+ */
 export const getBestPractices = (): BestPractices => {
   const details: BestPractices['details'] = []
 
+  /**
+   * Check a specific best practice condition.
+   * @param label The label for the best practice.
+   * @param condition The condition to check.
+   * @returns void
+   */
   const check = (label: string, condition: boolean) => {
     details.push({ label, value: condition ? 1 : 0 })
   }

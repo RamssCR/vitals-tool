@@ -3,6 +3,8 @@ import { twMerge } from 'tailwind-merge'
 
 /**
  * Merges Tailwind classes with a class list.
+ * @param inputs The class names to merge.
+ * @returns The merged class names.
  * @example
  * <DummyComponent
  *  className={classMerger('bg-amber-100 text-blue-600', isActive && 'bg-teal-500')}
