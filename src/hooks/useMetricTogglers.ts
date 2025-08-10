@@ -33,5 +33,9 @@ export const useMetricTogglers = (active = false) => {
     detailsActive,
     detailsToggle,
     handleAnimationEnd,
+    _debug: {
+      setAnimateOut,
+      setShouldRender
+    }
   }
 }
