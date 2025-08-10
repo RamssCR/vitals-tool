@@ -70,6 +70,8 @@ export default defineConfig(() => ({
         '*config.*',
         'src/vite-env.d.ts',
         'src/hooks/useFPS.ts',
+        'src/helpers/rules/**',
+        'src/index.ts'
       ],
       all: true,
       threshold: {
