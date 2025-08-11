@@ -1,69 +1,112 @@
-# React + TypeScript + Vite
+# Vitals Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Pull Request Automation](https://github.com/RamssCR/vitals-tool/actions/workflows/unit-testing.yaml/badge.svg)
+![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`vitals-tool` is a React plug-and-play library that provides a `Debugger` component for inspecting
+website metrics and web vitals in the same way as performing a Lighthouse audit without
+the need for manual analysis.
 
-## Expanding the ESLint configuration
+It compiles a first-load report of basic metrics like Accessibility, Best Practices and
+SEO, as well as tracking web vitals like Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS)
+during user interaction.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Index
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- [Installation](#installation)
+- [Usage](#usage)
+- [API](#api)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [License](#license)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Installation
+
+Run the following command to install the package:
+
+```bash
+# For npm
+npm install vitals-tool
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# For yarn
+yarn add vitals-tool
 ```
+
+```bash
+# For pnpm
+pnpm add vitals-tool
+```
+
+## Usage
+In order to use the analyzer, you need to import the `Debugger` component from the `vitals-tool` package.
+
+```tsx
+import { Debugger } from 'vitals-tool'
+
+function App() {
+  return (
+    <div>
+      <h1>Hello World</h1>
+      {import.meta.env.DEV && <Debugger />}
+    </div>
+  )
+}
+```
+
+> [!NOTE]
+> The Debugger component must only be used in development mode.
+
+## API
+
+### Debugger
+
+The `Debugger` component is the main entry point for using the vitals-tool library. It 
+automatically collects and displays web vitals and other performance metrics.
+
+#### Props
+
+| Name       | Type      | Description                                      |
+|------------|-----------|--------------------------------------------------|
+| `children` | ReactNode | The content to be rendered inside the debugger.  |
+
+```tsx
+import { Debugger } from 'vitals-tool'
+
+function App() {
+  return (
+    <div>
+      <h1>Hello World</h1>
+      {import.meta.env.DEV && <Debugger />}
+    </div>
+  )
+}
+```
+
+## Contributing
+
+We welcome contributions to the `vitals-tool` library! If you have suggestions for 
+improvements or new features, please open an issue or submit a pull request.
+
+## Tests
+
+To run the tests for the `vitals-tool` library, use the following command:
+
+```bash
+npm test
+```
+
+To check code coverage, use the following command:
+
+```bash
+npm test:coverage
+```
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
