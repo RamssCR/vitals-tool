@@ -11,14 +11,14 @@ export const DebugButton = ({ ...props }: ComponentProps<typeof Button>) => (
   <Button
     variant="none"
     size="icon"
-    className="rounded-full size-12 p-3 bg-tool-bg shadow absolute bottom-4 right-4 z-1000"
+    className="tw:rounded-full tw:border-2 tw:border-muted/90 tw:size-12 tw:p-3 tw:bg-tool-bg tw:shadow tw:absolute tw:bottom-4 tw:right-4 tw:z-1000"
     aria-label="Debug Button"
     {...props}
   >
     <Image
       src={bug}
       alt="Debug Button"
-      className="size-full object-contain"
+      className="tw:size-full tw:object-contain"
     />
   </Button>
 )

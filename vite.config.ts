@@ -12,14 +12,18 @@ export default defineConfig(() => ({
     react(),
     tailwindcss(),
     paths(),
-    dts(),
+    dts({
+      entryRoot: 'src',
+      outDir: 'dist',
+      tsconfigPath: './tsconfig.build.json',
+      insertTypesEntry: true,
+    }),
     visualizer({ open: true }),
   ],
   build: {
     lib: {
       entry: 'src/index.ts',
       name: 'VitalsTool',
-      fileName: (format) => `vitals-tool.${format}.js`,
     },
     rollupOptions: {
       external: [
@@ -66,6 +70,8 @@ export default defineConfig(() => ({
         '*config.*',
         'src/vite-env.d.ts',
         'src/hooks/useFPS.ts',
+        'src/helpers/rules/**',
+        'src/index.ts'
       ],
       all: true,
       threshold: {

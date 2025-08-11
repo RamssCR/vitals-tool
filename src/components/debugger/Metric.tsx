@@ -13,8 +13,8 @@ export const Metric = ({ active = false, label, value, details }: MetricProps) =
   ]
 
   return (
-    <article className="relative w-full flex flex-col items-center gap-2">
-      <Title size="xl" className="text-bg uppercase">{label}</Title>
+    <article className="tw:relative tw:w-full tw:flex tw:flex-col tw:items-center tw:gap-2">
+      <Title size="xl" className="tw:text-bg tw:uppercase">{label}</Title>
       <StatusText status={value ?? -1} size="lg">{value ?? '--'}</StatusText>
       {active && <Items items={details ?? fallback} />}
     </article>
