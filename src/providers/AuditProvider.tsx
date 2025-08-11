@@ -9,6 +9,8 @@ import { getSEO } from '@helpers/getSEO'
 /**
  * Provider component that runs web vitals audits and provides the results via context.
  * It performs audits for performance, accessibility, SEO, and best practices.
+ * @param props The props for the provider component.
+ * @returns The provider component.
  */
 export const AuditProvider = ({ children }: { children: ReactNode }) => {
   const [vitals, setVitals] = useState<Audit>({
@@ -20,21 +22,31 @@ export const AuditProvider = ({ children }: { children: ReactNode }) => {
   })
 
   useEffect(() => {
+    /**
+     * Runs the web vitals audits.
+     * @returns A promise that resolves when all audits are complete.
+     */
     const runAudits = async () => {
-      const [accessibility, seo, bestPractices] = await Promise.all([
+      const [accessibility, bestPractices] = await Promise.all([
         getAccessibility(),
-        Promise.resolve(getSEO()),
         Promise.resolve(getBestPractices())
       ])
 
-      const vitals = await getPerformance()
+      const seo = await getSEO()
 
-      setVitals({
-        vitals,
+      setVitals((prev) => ({
+        ...prev,
         accessibility,
         bestPractices,
         seo,
         loading: false
+      }))
+
+      getPerformance((performance) => {
+        setVitals((prev) => ({
+          ...prev,
+          vitals: performance,
+        }))
       })
     }
 

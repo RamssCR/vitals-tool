@@ -3,6 +3,8 @@ import { useCallback, useState } from 'react'
 /**
  * Custom hook for toggling a boolean state.
  * It provides the current state and a function to toggle it.
+ * @param initial The initial state of the toggle.
+ * @returns An object containing the current state and the toggle function.
  */
 export const useToggle = (initial = false) => {
   const [active, setActive] = useState(initial)

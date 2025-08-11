@@ -5,22 +5,22 @@ export const variants = cva(
   {
     variants: {
       variant: {
-        primary: 'text-primary',
-        muted: 'text-muted-foreground',
+        primary: 'tw:text-primary',
+        muted: 'tw:text-muted-foreground',
       },
       size: {
-        xxs: 'text-[0.625em]',
-        xs: 'text-xs',
-        sm: 'text-sm',
-        base: 'text-base',
-        lg: 'text-lg',
+        xxs: 'tw:text-[0.625em]',
+        xs: 'tw:text-xs',
+        sm: 'tw:text-sm',
+        base: 'tw:text-base',
+        lg: 'tw:text-lg',
       },
       weight: {
-        thin: 'font-thin',
-        extralight: 'font-extralight',
-        light: 'font-light',
-        normal: 'font-normal',
-        medium: 'font-medium',
+        thin: 'tw:font-thin',
+        extralight: 'tw:font-extralight',
+        light: 'tw:font-light',
+        normal: 'tw:font-normal',
+        medium: 'tw:font-medium',
       }
     },
     defaultVariants: {

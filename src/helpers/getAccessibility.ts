@@ -3,6 +3,10 @@ import axe from 'axe-core'
 
 let isRunning = false
 
+/**
+ * Get accessibility metrics for the current document.
+ * @returns A promise that resolves to an Accessibility metric result.
+ */
 export const getAccessibility = async (): Promise<Accessibility> => {
   if (isRunning) {
     return {
