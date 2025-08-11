@@ -1,6 +1,5 @@
 {
   "name": "vitals-tool",
-  "private": true,
   "description": "A tool for measuring and optimizing web vitals in React applications, including Lighthouse measurements like Accessibility, Best Practices and SEO.",
   "module": "dist/vitals-tool.js",
   "types": "dist/index.d.ts",
