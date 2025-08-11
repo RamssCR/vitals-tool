@@ -5,7 +5,7 @@
 
 ---
 
-`vitals-tool` is a React plug-and-play library that provides a `Debugger` component for inspecting
+`vitals-tool` is a React "plug-and-play" library that provides a `Debugger` component for inspecting
 website metrics and web vitals in the same way as performing a Lighthouse audit without
 the need for manual analysis.
 
