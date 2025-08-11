@@ -30,7 +30,7 @@ describe("getSEO", () => {
     ])
   })
 
-  test("debería calcular el puntaje correctamente cuando algunas reglas fallan", async () => {
+  test("should correctly calculate the score when some rules fail", async () => {
     vi.spyOn(seoRulesModule, "rules", "get").mockReturnValue([
       { label: "Rule 1", check: vi.fn().mockResolvedValue(true) },
       { label: "Rule 2", check: vi.fn().mockResolvedValue(false) }
