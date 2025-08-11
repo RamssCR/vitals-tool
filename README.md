@@ -69,12 +69,6 @@ function App() {
 The `Debugger` component is the main entry point for using the vitals-tool library. It 
 automatically collects and displays web vitals and other performance metrics.
 
-#### Props
-
-| Name       | Type      | Description                                      |
-|------------|-----------|--------------------------------------------------|
-| `children` | ReactNode | The content to be rendered inside the debugger.  |
-
 ```tsx
 import { Debugger } from 'vitals-tool'
 
@@ -90,8 +84,7 @@ function App() {
 
 ## Contributing
 
-We welcome contributions to the `vitals-tool` library! If you have suggestions for 
-improvements or new features, please open an issue or submit a pull request.
+We welcome contributions to the `vitals-tool` library! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
 
 ## Tests
 
@@ -99,12 +92,6 @@ To run the tests for the `vitals-tool` library, use the following command:
 
 ```bash
 npm test
-```
-
-To check code coverage, use the following command:
-
-```bash
-npm test:coverage
 ```
 
 ## License
