@@ -45,7 +45,7 @@ describe("getSEO", () => {
     ])
   })
 
-  test("debería asignar 0 si una regla lanza un error", async () => {
+  test("should assign 0 if a rule throws an error", async () => {
     vi.spyOn(seoRulesModule, "rules", "get").mockReturnValue([
       { label: "Rule 1", check: vi.fn().mockResolvedValue(true) },
       { label: "Rule 2", check: vi.fn().mockRejectedValue(new Error("fail")) }
