@@ -47,6 +47,7 @@ pnpm add vitals-tool
 In order to use the analyzer, you need to import the `Debugger` component from the `vitals-tool` package.
 
 ```tsx
+import "vitals-tool/dist/vitals-tool.css" // to inject library's styles for the component
 import { Debugger } from 'vitals-tool'
 
 function App() {
@@ -70,6 +71,7 @@ The `Debugger` component is the main entry point for using the vitals-tool libra
 automatically collects and displays web vitals and other performance metrics.
 
 ```tsx
+import "vitals-tool/dist/vitals-tool.css"
 import { Debugger } from 'vitals-tool'
 
 function App() {
