@@ -29,11 +29,11 @@ export const normalizeScore = (name: string, value: number): number => {
 }
 
 const listeners = {
-  LCP: onLCP,
-  CLS: onCLS,
-  INP: onINP,
-  FCP: onFCP,
-  TTFB: onTTFB,
+  LCP: (cb: (metric: Metric) => void) => onLCP(cb, { reportAllChanges: true }),
+  CLS: (cb: (metric: Metric) => void) => onCLS(cb, { reportAllChanges: true }),
+  INP: (cb: (metric: Metric) => void) => onINP(cb, { reportAllChanges: true }),
+  FCP: (cb: (metric: Metric) => void) => onFCP(cb, { reportAllChanges: true }),
+  TTFB: (cb: (metric: Metric) => void) => onTTFB(cb, { reportAllChanges: true }),
 }
 
 /**

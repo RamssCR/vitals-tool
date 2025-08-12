@@ -27,22 +27,21 @@ export const getAccessibility = async (): Promise<Accessibility> => {
     }
   })
 
-  const total = result.violations.length + result.passes.length
-  const score = total === 0
-    ? 100
-    : Math.round((result.passes.length / total) * 100)
+  const filteredResults = new Map<string, number>()
+  result.violations.forEach(violation => filteredResults.set(violation.id, 0))
 
-  const details = result.violations.map((violation) => ({
-    label: violation.id,
-    value: 0
-  }))
-
-  result.passes.forEach((pass) => {
-    details.push({
-      label: pass.id,
-      value: 1
-    })
+  result.passes.forEach(pass => {
+    if (!filteredResults.has(pass.id)) {
+      filteredResults.set(pass.id, 1)
+    }
   })
+  
+  const details = Array.from(filteredResults, ([label, value]) => ({ label, value }))
+  const score = details.length === 0
+    ? 100
+    : Math.round(
+      (details.filter(detail => detail.value === 1).length / details.length) * 100
+    )
 
   return {
     score,
