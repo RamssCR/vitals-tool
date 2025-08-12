@@ -1,0 +1,15 @@
+# Changelog
+
+All notable updates of this library will be documented on this file.
+
+This format is based on [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/)
+and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.2] - 2025-08-12
+### Fixed
+- Corrected duplicated metrics on `getAccessibility`.
+- Fixed off-screen `web-vitals` changes.
+
+## [1.0.1] - 2025-08-11
+### Fixed
+- Removed incorrect `Debugger` props on the `README` file.
