@@ -19,6 +19,7 @@ during user interaction.
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [How it works](#how-it-works)
 - [API](#api)
 - [Contributing](#contributing)
 - [Tests](#tests)
@@ -61,7 +62,21 @@ function App() {
 ```
 
 > [!NOTE]
-> The Debugger component must only be used in development mode.
+> The Debugger component must only be used in development or staging mode.
+
+## How it works
+Right after the page is loaded, the `Debugger` components runs a on-load analysis
+of your website and it displays a static report of the 3 last metrics (Accessibility,
+Best Practices and SEO), all of them 3 manage a raw integer score of 0 to 1: 0 if the 
+item doesn't pass the check and 1 if it does.
+
+Accesibility is evaluated using `axe-core` under the hood and it's one of the metrics 
+that can display different items based on what it covers during first-load analysis.
+
+Web Vitals (or Vitals) are evaluated using the `web-vitals` library under the hood and is 
+the only metric that displays a first-load result and it varies during user interaction, 
+for better understanding of how web vitals metrics work, read this article about 
+[web vitals](https://web.dev/articles/vitals).
 
 ## API
 
