@@ -1,4 +1,7 @@
 @import "tailwindcss" prefix(tw);
+@plugin "tailwind-scrollbar" {
+  nocompatible: true;
+}
 
 :root {
   /* Base Colors */
@@ -11,6 +14,8 @@
   /* Tool Colors */
   --tw-color-tool-bg: oklch(19.62% 0.04228 259.207);
   --tw-color-tool-muted: oklch(27.328% 0.07214 260.45);
+  --tw-color-tool-accent: oklch(33.223% 0.07677 260.747);
+  --tw-color-tool-border: oklch(38.723% 0.09838 259.484);
   --tw-color-analytic-success: oklch(67.311% 0.16242 144.231);
   --tw-color-analytic-warning: oklch(78.553% 0.15889 70.801);
   --tw-color-analytic-error: oklch(64.263% 0.21531 28.791);
@@ -49,6 +54,8 @@
   /* Tool Colors */
   --color-tool-bg: var(--tw-color-tool-bg);
   --color-tool-muted: var(--tw-color-tool-muted);
+  --color-tool-accent: var(--tw-color-tool-accent);
+  --color-tool-border: var(--tw-color-tool-border);
   --color-analytic-success: var(--tw-color-analytic-success);
   --color-analytic-warning: var(--tw-color-analytic-warning);
   --color-analytic-error: var(--tw-color-analytic-error);

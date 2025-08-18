@@ -18,7 +18,7 @@ export const Metrics = ({
   return (
     <article
       className={classMerger(
-        'tw:fixed tw:z-1000 tw:transform tw:left-1/2 tw:-translate-x-1/2 tw:top-4 tw:w-full tw:max-w-4xl tw:grid tw:grid-cols-1 tw:gap-y-6 tw:items-start tw:md:grid-cols-2 tw:md:gap-x-4 tw:lg:grid-cols-4 tw:rounded-xl tw:bg-gradient-to-b tw:from-tool-bg tw:to-tool-muted tw:py-4 tw:px-5 tw:md:px-7 tw:max-h-[95svh] tw:overflow-y-auto',
+        'tw:fixed tw:z-1000 tw:transform tw:left-1/2 tw:-translate-x-1/2 tw:top-4 tw:w-full tw:max-w-4xl tw:grid tw:grid-cols-1 tw:gap-y-6 tw:items-start tw:md:grid-cols-2 tw:md:gap-x-4 tw:lg:grid-cols-4 tw:rounded-xl tw:bg-gradient-to-b tw:from-tool-bg tw:to-tool-muted tw:py-4 tw:px-5 tw:md:px-7 tw:max-h-[95svh] tw:overflow-y-auto tw:scrollbar tw:scrollbar-w-6 tw:scrollbar-thumb-tool-accent tw:scrollbar-hover:scrollbar-thumb-tool-border tw:scrollbar-thumb-rounded-xl',
         animateOut ? 'tw:animate-tool-out' : 'tw:animate-tool-in',
         loading && 'tw:h-24',
       )}
