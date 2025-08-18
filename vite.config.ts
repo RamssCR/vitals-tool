@@ -3,7 +3,6 @@ import dts from 'vite-plugin-dts'
 import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
 import paths from 'vite-tsconfig-paths'
-import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vite.dev/config/
 /// <reference types="vitest/config" />
@@ -18,7 +17,6 @@ export default defineConfig(() => ({
       tsconfigPath: './tsconfig.build.json',
       insertTypesEntry: true,
     }),
-    visualizer({ open: true }),
   ],
   build: {
     lib: {
