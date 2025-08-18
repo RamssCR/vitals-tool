@@ -3,7 +3,7 @@
   "description": "A tool for measuring and optimizing web vitals in React applications, including Lighthouse measurements like Accessibility, Best Practices and SEO.",
   "module": "dist/vitals-tool.js",
   "types": "dist/index.d.ts",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "type": "module",
   "exports": {
     ".": {
@@ -53,6 +53,7 @@
     "globals": "^16.3.0",
     "jsdom": "^26.1.0",
     "rimraf": "^6.0.1",
+    "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.1.11",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.39.0",
